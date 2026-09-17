@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function Navbar() {
   return (
     <nav>
@@ -5,11 +7,11 @@ function Navbar() {
         <strong>PartyDog</strong>
       </div>
       <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none' }}>
-        <li>Inicio</li>
-        <li>Categorías</li>
-        <li>Productos</li>
-        <li>FAQ</li>
-        <li>Contacto</li>
+        <li><Link to="/">Inicio</Link></li>
+        <li><Link to="/#categorias">Categorías</Link></li>
+        <li><Link to="/productos">Productos</Link></li>
+        <li><Link to="/faq">FAQ</Link></li>
+        <li><Link to="/contacto">Contacto</Link></li>
         <li>Carrito</li>
       </ul>
     </nav>
