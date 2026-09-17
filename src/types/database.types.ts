@@ -1,6 +1,3 @@
-// Tipos que representan las tablas de Supabase.
-// Ajusta los campos si tu tabla real tiene columnas distintas.
-
 export interface Categoria {
   id: number
   nombre: string
@@ -8,11 +5,17 @@ export interface Categoria {
 
 export interface Producto {
   id: number
-  nombre: string
-  descripcion: string
-  precio: number
-  categoria_id: number
-  imagen_url?: string
+  created_at: string
+  categoria_id: number | null
+  nombre: string | null
+  descripcion: string | null
+  precio: number | null
+  imagen_url: string | null
+  peso_gramos: number | null
+  tiempo_preparacion_horas: number | null
+  disponible: boolean | null
+  destacado: boolean | null
+  activo: boolean | null
 }
 
 export interface Faq {
