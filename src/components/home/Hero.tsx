@@ -1,15 +1,18 @@
+import { Link } from 'react-router-dom'
+import './Hero.css'
+
 function Hero() {
   return (
-    <section>
-      <h1>Party Dog</h1>
-      <h2>Pasteles para celebrar a tu mejor amigo</h2>
-      <p>
+    <section className="hero">
+      <h1 className="hero-title">Party Dog</h1>
+      <h2 className="hero-subtitle">Pasteles para celebrar a tu mejor amigo</h2>
+      <p className="hero-description">
         Productos personalizados para perros, elaborados con ingredientes
         seguros y deliciosos.
       </p>
-      <div style={{ display: 'flex', gap: '1rem' }}>
-        <button>Ver Catálogo</button>
-        <button>Ordenar Ahora</button>
+      <div className="hero-actions">
+        <Link to="/productos" className="btn-primary">Ver Catálogo</Link>
+        <Link to="/contacto" className="btn-secondary">Ordenar Ahora</Link>
       </div>
     </section>
   )

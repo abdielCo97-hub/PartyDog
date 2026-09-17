@@ -1,6 +1,8 @@
+import './Footer.css'
+
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <p>© {new Date().getFullYear()} PartyDog. Todos los derechos reservados.</p>
     </footer>
   )

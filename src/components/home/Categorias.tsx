@@ -1,10 +1,11 @@
 import { useCategorias } from '../../hooks/useCategorias'
+import './Categorias.css'
 
 function Categorias() {
   const { categorias, loading, error } = useCategorias()
 
   return (
-    <section>
+    <section className="categorias" id="categorias">
       <h3>Categorías</h3>
 
       {loading && <p>Cargando categorías...</p>}
@@ -16,9 +17,11 @@ function Categorias() {
       )}
 
       {!loading && !error && categorias.length > 0 && (
-        <ul>
+        <ul className="categorias-lista">
           {categorias.map((categoria) => (
-            <li key={categoria.id}>{categoria.nombre}</li>
+            <li key={categoria.id} className="categoria-item">
+              {categoria.nombre}
+            </li>
           ))}
         </ul>
       )}

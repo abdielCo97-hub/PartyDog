@@ -1,14 +1,14 @@
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import Hero from '../components/home/Hero'
-import Categorias from '../components/home/Categorias'
 
 function Homepage() {
   return (
-    <div>
+    <div className="page">
       <Navbar />
-      <Hero />
-      <Categorias />
+      <main className="page-main">
+        <Hero />
+      </main>
       <Footer />
     </div>
   )

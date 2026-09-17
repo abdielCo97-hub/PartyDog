@@ -1,111 +1,62 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --color-bg: #FFFBF5;
+  --color-text: #3A2B24;
+  --color-accent: #FF6B5B;
+  --color-accent-hover: #E85A4A;
+  --color-secondary: #F4B942;
+  --color-surface: #FFFFFF;
+  --color-border: #EAE0D5;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --font-heading: 'Fredoka', sans-serif;
+  --font-body: 'Inter', sans-serif;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 4px 16px rgba(58, 43, 36, 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  background-color: var(--color-bg);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='140'%20height='140'%3E%3Cg%20fill='%23FF6B5B'%20fill-opacity='0.07'%3E%3Cg%20transform='translate(15,20)%20rotate(-15)'%3E%3Crect%20x='8'%20y='4'%20width='14'%20height='4'%20rx='2'/%3E%3Ccircle%20cx='6'%20cy='3'%20r='3'/%3E%3Ccircle%20cx='6'%20cy='9'%20r='3'/%3E%3Ccircle%20cx='24'%20cy='3'%20r='3'/%3E%3Ccircle%20cx='24'%20cy='9'%20r='3'/%3E%3C/g%3E%3C/g%3E%3Cg%20fill='%23F4B942'%20fill-opacity='0.09'%3E%3Cg%20transform='translate(95,75)%20rotate(12)'%3E%3Cpolygon%20points='15,0%205,20%2025,20'/%3E%3Ccircle%20cx='15'%20cy='0'%20r='2.5'/%3E%3C/g%3E%3C/g%3E%3Cg%20fill='%23FF6B5B'%20fill-opacity='0.06'%3E%3Cg%20transform='translate(55,105)%20rotate(30)'%3E%3Crect%20x='8'%20y='4'%20width='14'%20height='4'%20rx='2'/%3E%3Ccircle%20cx='6'%20cy='3'%20r='3'/%3E%3Ccircle%20cx='6'%20cy='9'%20r='3'/%3E%3Ccircle%20cx='24'%20cy='3'%20r='3'/%3E%3Ccircle%20cx='24'%20cy='9'%20r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.5;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
 p {
-  margin: 0;
+  margin: 0 0 1rem 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
