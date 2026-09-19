@@ -5,6 +5,7 @@
   padding: 1.25rem 2rem;
   background-color: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
+  position: relative;
 }
 
 .navbar-logo {
@@ -29,4 +30,56 @@
 
 .navbar-links a:hover {
   color: var(--color-accent);
+}
+
+/* Botón hamburguesa: oculto en pantallas grandes */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Pantallas angostas: activamos el menú hamburguesa */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .navbar-links-open {
+    max-height: 400px;
+  }
+
+  .navbar-links li {
+    padding: 1rem 2rem;
+    border-top: 1px solid var(--color-border);
+  }
 }
