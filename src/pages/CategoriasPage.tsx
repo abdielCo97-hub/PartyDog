@@ -4,9 +4,11 @@ import Categorias from '../components/home/Categorias'
 
 function CategoriasPage() {
   return (
-    <div>
+    <div className="page">
       <Navbar />
-      <Categorias />
+      <main className="page-main">
+        <Categorias />
+      </main>
       <Footer />
     </div>
   )

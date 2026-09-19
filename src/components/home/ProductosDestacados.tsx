@@ -1,10 +1,11 @@
 import { useProductos } from '../../hooks/useProductos'
+import './ProductosDestacados.css'
 
 function ProductosDestacados() {
   const { productos, loading, error } = useProductos(true)
 
   return (
-    <section>
+    <section className="productos-section">
       <h3>Productos Destacados</h3>
 
       {loading && <p>Cargando productos...</p>}
@@ -16,26 +17,21 @@ function ProductosDestacados() {
       )}
 
       {!loading && !error && productos.length > 0 && (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+        <div className="productos-grid">
           {productos.map((producto) => (
-            <div
-              key={producto.id}
-              style={{ border: '1px solid #444', padding: '1rem', width: '200px' }}
-            >
+            <div key={producto.id} className="producto-card">
               {producto.imagen_url && (
-                <img
-                  src={producto.imagen_url}
-                  alt={producto.nombre ?? 'Producto'}
-                  style={{ width: '100%', height: '120px', objectFit: 'cover' }}
-                />
+                <img src={producto.imagen_url} alt={producto.nombre ?? 'Producto'} />
               )}
-              <h4>{producto.nombre ?? 'Sin nombre'}</h4>
-              <p>{producto.descripcion ?? 'Sin descripción'}</p>
-              <p>
-                {producto.precio !== null
-                  ? `$${producto.precio.toFixed(2)}`
-                  : 'Precio no disponible'}
-              </p>
+              <div className="producto-card-body">
+                <h4>{producto.nombre ?? 'Sin nombre'}</h4>
+                <p>{producto.descripcion ?? 'Sin descripción'}</p>
+                <p className="producto-precio">
+                  {producto.precio !== null
+                    ? `$${producto.precio.toFixed(2)}`
+                    : 'Precio no disponible'}
+                </p>
+              </div>
             </div>
           ))}
         </div>

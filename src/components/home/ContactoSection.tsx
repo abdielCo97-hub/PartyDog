@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { MensajeContacto } from '../../types/database.types'
+import './ContactoSection.css'
 
 function ContactoSection() {
   const [formulario, setFormulario] = useState<MensajeContacto>({
@@ -22,9 +23,9 @@ function ContactoSection() {
   }
 
   return (
-    <section>
+    <section className="contacto-section">
       <h3>Contacto</h3>
-      <form onSubmit={manejarEnvio} style={{ display: 'grid', gap: '0.5rem', maxWidth: '400px' }}>
+      <form onSubmit={manejarEnvio} className="contacto-form">
         <input
           type="text"
           name="nombre"

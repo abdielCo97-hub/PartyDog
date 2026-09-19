@@ -4,9 +4,11 @@ import ContactoSection from '../components/home/ContactoSection'
 
 function ContactoPage() {
   return (
-    <div>
+    <div className="page">
       <Navbar />
-      <ContactoSection />
+      <main className="page-main">
+        <ContactoSection />
+      </main>
       <Footer />
     </div>
   )

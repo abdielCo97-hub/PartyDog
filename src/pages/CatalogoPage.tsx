@@ -4,9 +4,11 @@ import ProductosDestacados from '../components/home/ProductosDestacados'
 
 function CatalogoPage() {
   return (
-    <div>
+    <div className="page">
       <Navbar />
-      <ProductosDestacados />
+      <main className="page-main">
+        <ProductosDestacados />
+      </main>
       <Footer />
     </div>
   )

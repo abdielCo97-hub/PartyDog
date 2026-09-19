@@ -4,9 +4,11 @@ import FAQSection from '../components/home/FAQSection'
 
 function FaqPage() {
   return (
-    <div>
+    <div className="page">
       <Navbar />
-      <FAQSection />
+      <main className="page-main">
+        <FAQSection />
+      </main>
       <Footer />
     </div>
   )
