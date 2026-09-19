@@ -28,3 +28,8 @@
   color: #6B5A50;
   margin: 0;
 }
+
+.faq-error {
+  color: #C62828;
+  text-align: center;
+}
